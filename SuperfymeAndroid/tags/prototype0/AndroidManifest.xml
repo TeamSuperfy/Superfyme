@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.enterprise.lokaAndroid"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:debuggable="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Sherlock.Light.DarkActionBar" >
+        <uses-library android:name="com.google.android.maps" />
+
+        <activity android:name=".activities.MainActivity" >
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="de.enterprise.lokaAndroid.services.MyService" >
+        </service>
+
+        <activity android:name=".activities.PostActivity" >
+        </activity>
+        <activity android:name=".activities.CameraSurface" >
+        </activity>
+        <activity android:name=".activities.PostDetailActivity" >
+        </activity>
+        <activity android:name="de.enterprise.lokaAndroid.activities.MapswithfragmentsActivity" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <fragment
+        android:id="@+id/mapContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/mapButtonsLayout"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:clickable="true" >
+
+    </fragment>
+
+    <LinearLayout
+        android:id="@+id/mapButtonsLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/roundrec"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/ImageButton03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#00000000"
+            android:onClick="onNewPostClicked"
+            android:src="@drawable/add_post" />
+
+        <ImageButton
+            android:id="@+id/ImageButton02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#00000000"
+            android:onClick="onFindLocationClicked"
+            android:src="@drawable/worldmap" />
+
+        <ImageButton
+            android:id="@+id/button3_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#00000000"
+            android:onClick="onSwitchGroupPostClicked"
+            android:src="@drawable/zielort_2" />
+
+        <ImageButton
+            android:id="@+id/button4_groups"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:onClick="onGroupSelectionClicked"
+            android:src="@drawable/context" />
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Context>
+
+    <Resource
+        name="jdbc/Superfy"
+        auth="Container"
+        driverClassName="com.mysql.jdbc.Driver"
+        maxWait="5000"
+        password="superfyme"
+        type="javax.sql.DataSource"
+        url="jdbc:mysql://localhost:3306/loka_database"
+        username="root" 
+        
+        removeAbandoned="true"
+        logAbandoned="true"
+        
+        minEvictableIdleTimeMillis="21600000"
+		numTestsPerEviction="-1"
+        />
+
+</Context>

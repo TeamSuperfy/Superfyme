@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <body>
+        <ui:composition template="./WEB-INF/template/main.xhtml">
+
+            <ui:define name="content">
+
+                <ui:include src="./WEB-INF/components/map.xhtml" />
+
+                <div id="postList">Posts</div>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

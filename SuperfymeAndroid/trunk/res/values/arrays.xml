@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <string-array name="posts_criteria">
+        <item name="0">Popularity</item>
+        <item name="1">Distance</item>
+        <item name="2">Time</item>
+    </string-array>
+    
+    <string-array name="posts_criteria_values">
+        <item name="0">0</item>
+        <item name="1">1</item>
+        <item name="2">2</item>
+    </string-array>
+    
+    <string-array name="groups_criteria">
+        <item name="0">Distance</item>
+    </string-array>
+    
+    <string-array name="groups_criteria_values">
+        <item name="0">0</item>
+    </string-array>
+    
+</resources>

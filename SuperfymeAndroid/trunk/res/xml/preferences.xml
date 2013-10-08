@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <CheckBoxPreference 
+        android:key="anonymous"
+        android:title="anonymous"
+        android:defaultValue="false"
+        />
+    <ListPreference android:title="Posts Default Sort Criterion" android:entries="@array/posts_criteria" android:key="posts_default_criterion" android:entryValues="@array/posts_criteria_values"/>
+    <ListPreference android:title="Groups Default Sort Criterion" android:entries="@array/groups_criteria" android:key="groups_default_criterion" android:entryValues="@array/groups_criteria_values"/>
+    
+
+</PreferenceScreen>

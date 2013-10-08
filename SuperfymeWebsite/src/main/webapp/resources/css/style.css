@@ -1,0 +1,193 @@
+/* 
+    Document   : style.css
+    Created on : 28.10.2012, 12:58:04
+    Author     : Arthur.Grohe
+    Description:
+       Common Styles
+*/
+
+/*
+Farbgebung von sfm:
+
+rot f26161
+ blau 44a5ff
+ rest ist weiß
+ bei den posts verwende ich einen radial gradient, also einen einen kreis farbverlauf. die kreiskoordinaten sind: x = breite/2    y = höhe*0.95
+ startColor="#889ed0ff"
+ endColor="#8844a5ff"
+ 88 am anfang ist die transparenz
+ grundsätzlich gilt: rot oben, blau unten, rest weiß
+
+*/
+
+html{ 
+    background:-webkit-linear-gradient(bottom, #fff, #44a5ff); /* Safari, Chrome */
+    background:-o-linear-gradient(bottom,#fff, #44a5ff); /* Opera */
+    background:-ms-linear-gradient(bottom, #fff, #44a5ff); /* IE #91C9E8*/
+    background: -moz-linear-gradient(bottom, #fff, #44a5ff) ; 
+    background: linear-gradient(bottom, #fff, #44a5ff); 
+    height: 100%;
+
+}
+body, ul, a, span, p{
+    font-size: 12px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    color: #1A1F2B;  
+    margin: 0;
+    padding: 0;
+
+}
+
+body{height: 100%;}
+
+h1, h2,h3,h4,h5,h6{ margin:0; padding:0 }
+h2{ font-weight: normal;}
+
+a { text-decoration: none;}
+
+div{ 
+    -moz-border-radius: 10px; /* Firefox - alte Syntax */
+    -webkit-border-radius: 10px; /* Safari, Chrome - alte Syntax */
+    border-radius: 10px; /* alle neuen Browser, W3C Standard */
+}
+
+#contenWrap {
+    width: 85%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    /*background: #E8F8FF;*/
+
+}
+
+#footer, #top, #content {
+    padding: 5px; 
+    margin: 0px;
+    border: 1px #1A1F2B solid;
+}
+
+#top{ 
+    background:-webkit-radial-gradient(circle, #f26161, #BF4C4C); /* Safari, Chrome */
+    background:-o-radial-gradient(circle,#f26161, #BF4C4C); /* Opera */
+    background:-ms-radial-gradient(circle, #f26161, #BF4C4C); /* IE #91C9E8*/
+    background: -moz-radial-gradient(circle, #f26161, #BF4C4C) ; 
+    background: radial-gradient(circle, #f26161, #BF4C4C); 
+
+    /* background-color: #f26161;*/
+    
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0; 
+    border-radius: 0; 
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#banner{
+    color: #fff;
+    height: 85px;
+    text-align: center;
+    /*background: url("../resources/images/munich_glass2.png") repeat-x scroll 676px 4px transparent;*/
+
+}
+
+#banner h1{ 
+    line-height: 2em;
+
+}
+
+#banner img{
+    width: 80px;
+    height: 80px;
+    display: block;
+    float:left;
+    margin-right: 15px;
+    margin-left: 5px;
+}
+
+#nav{
+    margin-bottom: -1px;
+}
+
+#content{ 
+    background-color: #44a5ff; 
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px; 
+    border-radius: 10px 10px 10px 10px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    height: 82%;
+}
+
+#googleMap{
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0; 
+    border-radius: 0;
+    width: 65%; 
+    height: 98%;
+    float: left;  
+    margin-right: 5px;
+    padding: 2px;
+}
+#postList{
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0; 
+    border-radius: 0;
+    height: 98%;
+    overflow-y: auto; 
+    border: 0;
+    padding: 2px;
+}
+
+#postList div{
+    border: 1px solid;
+    padding: 3px;
+    background-color: #82D9F7;
+    margin: 3px 0;
+}
+
+#footer{ 
+    background-color: #fff;
+    -moz-border-radius: 0 0 10px 10px;
+    -webkit-border-radius: 0 0 10px 10px; 
+    border-radius: 10px 10px 10px 10px; 
+    margin-top: 10px;
+    height: 50px;
+    line-height: 50px;
+    text-align: right;
+}
+
+ul.horizontalList li{
+    list-style: none;
+    display: inline;
+    margin: 0 2px;
+}
+
+.tabItem{
+    background-color: #4A6491;
+    -moz-border-radius: 0 0 0 0;
+    -webkit-border-radius: 0 0 0 0;
+    border-radius: 0 0 0 0;
+    border: 1px solid #1A1F2B;
+    border-left: 0;
+    border-right: 0;
+    padding: 5px 0px 0;
+    width: 50%;
+    text-align: center;
+    font-weight: bold;
+    float:left;
+    margin-left: 0;
+    margin-right: 0;
+    cursor: pointer;
+}
+
+.tabItem.active, .tabItem:hover{
+    background-color: #44A5FF;
+    border-bottom: none;
+    position: relative;
+}
+
+.clear {
+    clear: both;
+}

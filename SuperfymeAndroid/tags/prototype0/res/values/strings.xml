@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, GUILokaActivity!</string>
+    <string name="app_name">loka</string>
+    <string name="text_name">Name</string>
+    <string name="text_localisation">Lokalisation</string>
+    <string name="text_picupload">Bildhochladen</string>
+    <string name="text_post">Gib dein Text ein...</string>
+    <string name="buton_gps">GPS</string>
+    <string name="button_pic">Bild</string>
+    <string name="button_post">Post</string>
+    <string name="button_map">Map</string>
+    <string name="button_search">Suche</string>
+    <string name="button_main">Main</string>
+    <string name="button_searchlocalisation">Suche</string>
+    <string name="button_createpost">Post erstellen</string>
+    <string name="tab_map">Map</string>
+    <string name="api_key">0-UDCLdV3p49ZBN350j6EDSOnw5H4gO7bUzqwZQ</string>
+
+</resources>

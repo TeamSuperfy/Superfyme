@@ -1,0 +1,109 @@
+<?xml version = "1.0" encoding = "ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <ui:composition>
+        <h:outputScript library="js" name="superfymeHelper.js" />
+        <script type="text/javascript"
+                src="https://maps.google.com/maps/api/js?sensor=true">
+        </script>
+        <script type="text/javascript" language="JavaScript" src="http://j.maxmind.com/app/geoip.js"></script>
+
+        <script type="text/javascript"><!--
+            jQuery(document).ready(function(){
+                initialize();
+                
+            });
+            
+            var map;
+            var homeLoc;
+            function initialize() {
+                homeLoc = new google.maps.LatLng(geoip_latitude(),geoip_longitude());
+                //var latlng = new google.maps.LatLng(52.57074184061031, 5.435155468750054); // nähe Bielefeld
+                // console.log("latlong found:"+latlng);
+                var myOptions = {
+                    zoom: 11,
+                    center: homeLoc,
+                    disableDefaultUI: true,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                
+                map = new google.maps.Map(document.getElementById("googleMap"),
+                myOptions);
+                
+                // Create the DIV to hold the control and call the SearchControl() constructor
+                // passing in this DIV.
+                var searchControlDiv = document.createElement('div');
+                var searchControl = new SearchControl(searchControlDiv, map);
+
+                searchControlDiv.index = 1;
+                map.controls[google.maps.ControlPosition.TOP_RIGHT].push(searchControlDiv);
+                
+                var sfmHelper = new SuperfymeHelper(map);
+                
+                google.maps.event.addListener(map, 'idle', sfmHelper.sendPostRequest);
+               
+            }
+            function SearchControl(controlDiv, map) {
+
+                // Set CSS styles for the DIV containing the control
+                // Setting padding to 5 px will offset the control
+                // from the edge of the map.
+                controlDiv.style.padding = '5px';
+
+                // Set CSS for the control border.
+                var controlUI = document.createElement('div');
+                controlUI.style.border = 'none';
+                controlUI.style.cursor = 'pointer';
+                controlUI.style.textAlign = 'center';
+                controlDiv.appendChild(controlUI);
+
+                var htmlcontent = "<input type='text' id='search_address' value='' onkeyup='search(event)' /><button onclick='home();'>Home</button>";
+                // Set CSS for the control interior.
+                var controlText = document.createElement('div');
+                controlText.style.fontFamily = 'Arial,sans-serif';
+                controlText.style.fontSize = '12px';
+                controlText.style.paddingLeft = '4px';
+                controlText.style.paddingRight = '4px';
+                controlText.innerHTML = htmlcontent;
+                controlUI.appendChild(controlText);
+
+                // Setup the click event listeners: simply set the map to Chicago.
+                // google.maps.event.addDomListener(controlUI, 'click', function() {
+                //    map.setCenter(chicago)
+                // });
+            }
+            
+            function search(event) {
+                if(event.keyCode != 13) return false;
+                var addressField = document.getElementById('search_address');
+                var geocoder = new google.maps.Geocoder();
+                geocoder.geocode(
+                {'address': addressField.value}, 
+                function(results, status) { 
+                    if (status == google.maps.GeocoderStatus.OK) { 
+                        var loc = results[0].geometry.location;
+                        map.panTo(loc);
+                    } 
+                    else {
+                        alert("Not found: " + status); 
+                    } 
+                }
+            );
+            };
+            function home() {
+                map.panTo(homeLoc);
+            };
+        -->
+        </script>
+
+
+        <div id="googleMap" onload="initialize()">
+
+
+        </div>
+
+    </ui:composition>
+</html>
+

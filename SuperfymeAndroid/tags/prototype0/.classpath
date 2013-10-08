@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="lib" path="C:/Users/Alex/Downloads/dev/jersey-archive-1.12/lib/jackson-core-asl-1.9.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Alex/Downloads/dev/jersey-archive-1.12/lib/jackson-mapper-asl-1.9.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Alex/Downloads/dev/android-support-v4-r6-googlemaps.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/LokaServer"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
