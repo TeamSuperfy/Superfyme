@@ -209,11 +209,6 @@ public class MeTabActivity extends SherlockFragmentActivity implements TabListen
 		ft.hide(current);
 	}
 
-	@Override
-	protected boolean isRouteDisplayed() {
-		return false;
-	}
-
 	private void connectionChanged() {
 		if(msb != null){
 			msb.resetRequests();

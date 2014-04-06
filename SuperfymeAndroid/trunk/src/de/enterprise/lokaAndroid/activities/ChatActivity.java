@@ -45,13 +45,13 @@ public class ChatActivity extends SherlockListActivity{
 	private MessagePojo msg;
 	private GroupPojo inviting_group;
 	
-	private ServiceConnection sc = new ServiceConnection(){
-		@Override
-		public void onServiceConnected(ComponentName arg0, IBinder binder) {
-			setBinder((IMyService)binder);
+	private ServiceConnection sc = new ServiceConnection() {
+		
+		public void onServiceDisconnected(ComponentName name) {
 		}
-		@Override
-		public void onServiceDisconnected(ComponentName arg0) {
+		
+		public void onServiceConnected(ComponentName name, IBinder service) {
+			msb = (IMyService)service;
 		}
 	};
 	
@@ -84,8 +84,8 @@ public class ChatActivity extends SherlockListActivity{
 			String json = data.getString("json");
 			GroupPojo[] groups = (GroupPojo[]) JSONConverter.fromJSON(json, GroupPojo[].class.getName());
 			inviting_group = groups[0];
-			groupHandler.post(new Runnable(){
-				@Override
+			groupHandler.post(new Runnable() {
+				
 				public void run() {
 					adapter.notifyDataSetChanged();
 				}
@@ -103,8 +103,8 @@ public class ChatActivity extends SherlockListActivity{
 			int picID = (Integer) obj.get("pID");
 			Bitmap bmp = ImageHelperAndroid.getBitmapFromByteArray(b.getByteArray("img"));
 			msb.saveUserPic(picID, bmp);
-			groupHandler.post(new Runnable(){
-				@Override
+			groupHandler.post(new Runnable() {
+				
 				public void run() {
 					adapter.notifyDataSetChanged();
 				}
@@ -114,7 +114,7 @@ public class ChatActivity extends SherlockListActivity{
 	};
 	
 	private class MessageComparator implements Comparator<MessagePojo>{
-		@Override
+
 		public int compare(MessagePojo lhs, MessagePojo rhs) {
 			if(lhs.getDate() > rhs.getDate()){
 				return 1;
@@ -126,6 +126,8 @@ public class ChatActivity extends SherlockListActivity{
 				return -1;
 			}
 		}
+
+
 	}
 	
 	private class DecodeMessagesTask extends AsyncTask<String, Void, Void> {
@@ -215,7 +217,6 @@ public class ChatActivity extends SherlockListActivity{
 		edtMessageText = (EditText) findViewById(R.id.edtMessageText);
 		edtMessageText.addTextChangedListener(new TextWatcher(){
 
-			@Override
 			public void afterTextChanged(Editable txt) {
 				if(txt.length() > 0){
 					if(otherUID != -1){
@@ -227,21 +228,19 @@ public class ChatActivity extends SherlockListActivity{
 				}
 			}
 
-			@Override
-			public void beforeTextChanged(CharSequence s, int start, int count,
-					int after) {
+			public void beforeTextChanged(CharSequence arg0, int arg1,
+					int arg2, int arg3) {
 			}
 
-			@Override
-			public void onTextChanged(CharSequence s, int start, int before,
-					int count) {
+			public void onTextChanged(CharSequence arg0, int arg1, int arg2,
+					int arg3) {
 			}
 			
 		});
 		btnSendMessage = (Button) findViewById(R.id.btnSendMessage);
 		btnSendMessage.setOnClickListener(new OnClickListener(){
-			@Override
-			public void onClick(View v) {
+
+			public void onClick(View arg0) {
 				sendMessage();
 			}
 			

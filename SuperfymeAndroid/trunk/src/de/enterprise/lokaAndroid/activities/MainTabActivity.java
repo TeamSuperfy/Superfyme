@@ -407,12 +407,6 @@ public class MainTabActivity extends SherlockFragmentActivity implements TabList
 		ft.hide(current);
 	}
 
-
-	@Override
-	protected boolean isRouteDisplayed() {
-		return false;
-	}
-
 	@SuppressWarnings("ucd")
 	public void onNewPostClicked(final View view){
 		if(!msb.getUser().isBanned()){
@@ -421,7 +415,6 @@ public class MainTabActivity extends SherlockFragmentActivity implements TabList
 		}else{
 			Toast.makeText(this, getResources().getString(R.string.you_are_banned), Toast.LENGTH_SHORT).show();
 		}
-
 	}
 	
 	@SuppressWarnings("ucd")
